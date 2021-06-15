@@ -8,7 +8,7 @@ const AccountProfile = ()=> {
             <h1>AccountProfile</h1>
             <Account />
             <AccountForm />
-            <AccountFormClass />
+            <AccountFormClass title='yo'/>
         </div>
     )
 }

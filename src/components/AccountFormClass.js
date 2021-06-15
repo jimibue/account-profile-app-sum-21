@@ -1,10 +1,11 @@
 import React from 'react'
 import { Form } from 'semantic-ui-react'
+import { AccountConsumer } from '../providers/AccountProvider'
 
 class AccountFormClass extends React.Component {
     state = {
-        username:'',
-        membershipLevel:''
+        username: this.props.username,
+        membershipLevel: this.props.membershipLevel
     }
     handleSubmitYo = (e) => {
         const {username, membershipLevel} = this.state
@@ -23,6 +24,8 @@ class AccountFormClass extends React.Component {
     render(){
     const {username, membershipLevel} = this.state
     return (
+        <>
+        <h1>title: {this.props.title}</h1>
         <Form onSubmit={this.handleSubmitYo}>
             <Form.Input 
               label='Username'
@@ -40,8 +43,21 @@ class AccountFormClass extends React.Component {
             />
             <Form.Button color='blue'>Save</Form.Button>
         </Form>
+        </>
     )
     }
+}
+
+const ConnectedAccountForm = (props) => {
+    return (
+        <AccountConsumer>
+            {value => (<AccountFormClass 
+                        {...props}
+                        username={value.username}
+                        membershipLevel={value.membershipLevel}
+                        />)}
+        </AccountConsumer>
+    )
 }
 
 const membershipOptions = [
@@ -50,4 +66,5 @@ const membershipOptions = [
     {key: 's', value: 'Silver', text: 'Silver' },
 ]
 
-export default AccountFormClass
+export default ConnectedAccountForm
+// export default AccountFormClass
