@@ -1,5 +1,6 @@
 import Account from "./Account"
 import AccountForm from "./AccountForm"
+import AccountFormClass from "./AccountFormClass"
 
 const AccountProfile = ()=> {
     return (
@@ -7,6 +8,7 @@ const AccountProfile = ()=> {
             <h1>AccountProfile</h1>
             <Account />
             <AccountForm />
+            <AccountFormClass />
         </div>
     )
 }
