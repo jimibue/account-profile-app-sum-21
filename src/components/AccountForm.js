@@ -8,6 +8,8 @@ const AccountForm = ()=> {
     const [membershipLevel, setMembershipLevel] = useState(account.membershipLevel)
     const handleSubmitYo = (e) => {
         e.preventDefault()
+        account.setUsername(username)
+        account.setMembershipLevel(membershipLevel)
         console.log(username)
         console.log(membershipLevel)
     }

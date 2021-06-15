@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 
 // setup the initial context
+// {Consumer:, Provider}
 export const AccountContext = React.createContext()
 
 // create an exportable consumer that can be used
@@ -9,6 +10,7 @@ export const AccountConsumer = AccountContext.Consumer
 
 const AccountProvider = (props) => {
     const [username, setUsername] = useState('YOYOY')
+    const [email, setEmail] = useState('test@gmail.com')
     const [membershipLevel, setMembershipLevel] = useState('Silver')
     const [dateJoined, setDateJoined] = useState('12/23/12')
 
@@ -16,7 +18,12 @@ const AccountProvider = (props) => {
         <AccountContext.Provider value={{
             username,
             membershipLevel,
-            dateJoined
+            dateJoined,
+            email,
+            setUsername,
+            setMembershipLevel,
+            setEmail,
+            setDateJoined
         }}>
            {props.children}
         </AccountContext.Provider>

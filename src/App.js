@@ -4,6 +4,7 @@ import { Container } from 'semantic-ui-react';
 import { Route, Switch } from 'react-router-dom';
 import Home from './components/Home';
 import AccountProfile from './components/AccountProfile';
+import AddUser from './components/AddUser';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Container>
         <Switch>
           <Route exact path='/' component={Home} />
+          <Route exact path='/users/new' component={AddUser} />
           <Route
             exact
             path='/account/profile'

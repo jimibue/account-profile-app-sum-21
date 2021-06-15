@@ -20,6 +20,11 @@ const Navbar = () => {
                     {username}
                 </Menu.Item>
             </NavLink>
+            <NavLink to="/users/new">
+                <Menu.Item active={pathname === '/users/new'}>
+                    new
+                </Menu.Item>
+            </NavLink>
         </Menu>
     )
 }
